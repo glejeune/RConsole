@@ -14,7 +14,6 @@ SH_CONST = NSColor.blueColor
 SH_NUMBER = NSColor.orangeColor
 SH_CLASSVAR = NSColor.colorWithCalibratedRed 0.45, :green => 0.12, :blue => 0.44, :alpha => 1
 
-
 class RConsole
 	attr_accessor :main_window, :result_window
 	attr_accessor :console, :output
@@ -44,17 +43,14 @@ class RConsole
 		
 		# Get StatusBar menu image
 		@menuImage = NSImage.imageNamed("rConsole.png")
-		
-		# Main Window active
-		@mainWindowIsActive = false
 	end
 	
 	def awakeFromNib
 		self.console.textStorage.delegate = self
 		self.interpreters.selectItemAtIndex(0)
 		
-		self.console.font = NSFont.fontWithName "Courier", :size => 12
-		self.output.font = NSFont.fontWithName "Courier", :size => 14
+		self.console.font = NSFont.fontWithName( "Courier", size:14 )
+		self.output.font = NSFont.fontWithName( "Courier", size:14 )
 	end
 	
 	def applicationDidFinishLaunching( aNotification )
@@ -242,17 +238,22 @@ class RConsole
 		# Get the code and save it in a temp file
 		the_code = self.console.textStorage.string
 		t = Tempfile::open( "rConsole" )
-        t.print( the_code )
-        t.close
+    t.print( the_code )
+    t.close
 
 		# Run !
-		begin
-			IO.popen("#{rubyInterpreter} #{t.path} 2>&1") { |o|
-				self.output.textStorage.mutableString.string = o.read.gsub( t.path, "RConsole" )
-			}
-		rescue => e
-			self.output.textStorage.mutableString.string = e.message
-		end
+		OpenX.open(rubyInterpreter, [t.path]) { |o, e, _|
+		  self.output.textStorage.mutableString.string = o
+		  
+		  colorRange = NSRange.new
+		  colorRange.location = self.output.textStorage.length
+		  colorRange.length = e.gsub( t.path, "RConsole" ).length
+		  
+		  self.output.textStorage.mutableString.appendString(e.gsub( t.path, "RConsole" ))
+		  self.output.textStorage.addAttribute NSForegroundColorAttributeName,
+					:value => NSColor.redColor,
+					:range => colorRange
+		}
 	ensure
 		t.unlink
 	end
@@ -263,12 +264,12 @@ class RConsole
 	end
 	
 	def showMainWindow(sender)
-		@mainWindowIsActive = true
 		self.main_window.makeKeyAndOrderFront(self)
 	end
 
 	def hideMainWindow(sender)
-		@mainWindowIsActive = false
+		self.closePreferencesWindow(sender)
+		self.closeResultWindow(sender)
 		self.main_window.orderOut(self)
 	end
 	

@@ -8,7 +8,6 @@
 
 #import "EventHotkey.h"
 
-
 @implementation EventHotkey
 @synthesize delegate;
 
