@@ -227,18 +227,29 @@ class RConsole
 	
 	# -- MainWindow Actions --------------------------------------
 	def run(sender)
+		# Get the code
+		the_code = self.console.textStorage.string
+    executeCode(the_code) if the_code.strip.size > 0
+	end
+  
+  def runSelection(sender)
+    the_code = self.console.string.substringWithRange(self.console.selectedRange)
+    executeCode(the_code) if the_code.strip.size > 0
+  end
+  
+  def executeCode(code)
 		# Get the ruby interpreter to use
 		rubyInterpreter = @interpreters_list[interpreters.indexOfSelectedItem]["path"]
 		
 		# Show Main Window 
-		self.showMainWindow(sender)
+		self.showMainWindow(self)
+    
 		# Show the result window
 		NSApp.beginSheet(result_window, modalForWindow:main_window, modalDelegate:nil, didEndSelector:nil, contextInfo:nil)
 
 		# Get the code and save it in a temp file
-		the_code = self.console.textStorage.string
 		t = Tempfile::open( "rConsole" )
-    t.print( the_code )
+    t.print( code )
     t.close
 
 		# Run !
@@ -254,9 +265,9 @@ class RConsole
 					:value => NSColor.redColor,
 					:range => colorRange
 		}
-	ensure
+  ensure
 		t.unlink
-	end
+  end
 	
 	def showPreferencesWindow(sender)
 		self.showMainWindow(sender)
