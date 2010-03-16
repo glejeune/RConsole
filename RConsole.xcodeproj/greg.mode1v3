@@ -276,8 +276,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>14</integer>
-									<integer>11</integer>
+									<integer>3</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -331,20 +331,20 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>376B7DF0114F7E8000927A36</string>
+										<string>376B7E3E114FB58B00927A36</string>
 										<key>history</key>
 										<array>
 											<string>37DD65AC114827AE003BE423</string>
-											<string>37E357AC11490D8F00D3DB9A</string>
 											<string>37F7D753114BE0A700D3248E</string>
 											<string>37C15CAD114E63D00053603A</string>
 											<string>37C15CAE114E63D00053603A</string>
 											<string>37C15CAF114E63D00053603A</string>
 											<string>37C15CB0114E63D00053603A</string>
-											<string>37930046114E84BE009DE629</string>
-											<string>37930047114E84BE009DE629</string>
 											<string>376B7D88114ECA6900927A36</string>
-											<string>376B7DBC114F7A9000927A36</string>
+											<string>376B7E06114FB21300927A36</string>
+											<string>376B7E07114FB21300927A36</string>
+											<string>376B7E08114FB21300927A36</string>
+											<string>376B7E09114FB21300927A36</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -542,13 +542,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>376B7DF1114F7E8000927A36</string>
 		<string>376B7DC5114F7A9000927A36</string>
 		<string>376B7DC6114F7A9000927A36</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>377D05861147AAE3004DC6E6</string>
-		<string>/Users/greg/Dropbox/Greg/Dev/github/RConsole/RConsole.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/greg/Dropbox/Greg/Dev/github/RConsole/RConsole.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 110 1280 668 0 0 1280 778 </string>
@@ -897,7 +896,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {650, 209}}</string>
 								<key>RubberWindowFrame</key>
-								<string>14 117 650 250 0 0 1280 778 </string>
+								<string>34 163 650 250 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -926,7 +925,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>14 117 650 250 0 0 1280 778 </string>
+			<string>34 163 650 250 0 0 1280 778 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

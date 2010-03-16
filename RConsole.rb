@@ -49,7 +49,14 @@ class RConsole
 		self.console.textStorage.delegate = self
 		self.interpreters.selectItemAtIndex(0)
 		
-		self.console.font = NSFont.fontWithName( "Courier", size:14 )
+    # Set saved code
+    self.console.textStorage.mutableString.string = NSString.alloc.initWithData(
+      @userDefaultsPrefs.dataForKey("Code"), 
+      encoding:NSUTF8StringEncoding
+    )
+    
+    # Set default font
+    self.console.font = NSFont.fontWithName( "Courier", size:14 )
 		self.output.font = NSFont.fontWithName( "Courier", size:14 )
 	end
 	
@@ -84,10 +91,23 @@ class RConsole
 		NSApp.activateIgnoringOtherApps(true)
 	end
 	
+  def applicationShouldTerminate(sender)
+    saveCode()
+    return true
+  end
+  
 	def windowShouldClose(win)
+    puts "CLOSE"
+    saveCode()
 		win.orderOut(self)
 		return false
 	end
+  
+  def saveCode
+    puts self.console.textStorage.string
+    data = self.console.textStorage.string.dataUsingEncoding(NSUTF8StringEncoding)
+    @userDefaultsPrefs.setObject(data, forKey:"Code")
+  end
 	
 	# -- Syntac Highlighting --------------------------------------
 	def textStorageDidProcessEditing(notification)

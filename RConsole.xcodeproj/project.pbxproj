@@ -48,8 +48,8 @@
 		372BC7CF114A749B00BBDFFC /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372BC7CE114A749B00BBDFFC /* Carbon.framework */; };
 		372BC7D7114A74DA00BBDFFC /* EventHotkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 372BC7D6114A74DA00BBDFFC /* EventHotkey.m */; };
 		372BC81E114A802200BBDFFC /* Spaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 372BC81D114A802200BBDFFC /* Spaces.m */; };
+		376B7DF7114F88FB00927A36 /* KBCaptureEvent.rb in Resources */ = {isa = PBXBuildFile; fileRef = 376B7DF6114F88FB00927A36 /* KBCaptureEvent.rb */; };
 		377D058F1147B23D004DC6E6 /* RConsole.rb in Resources */ = {isa = PBXBuildFile; fileRef = 377D058E1147B23D004DC6E6 /* RConsole.rb */; };
-		3793003B114E8324009DE629 /* KETextField.rb in Resources */ = {isa = PBXBuildFile; fileRef = 3793003A114E8324009DE629 /* KETextField.rb */; };
 		37C15C49114E2EDA0053603A /* OpenX.rb in Resources */ = {isa = PBXBuildFile; fileRef = 37C15C48114E2EDA0053603A /* OpenX.rb */; };
 		37DD659311482680003BE423 /* rConsole.icns in Resources */ = {isa = PBXBuildFile; fileRef = 37DD659211482680003BE423 /* rConsole.icns */; };
 		37E35760114902FE00D3DB9A /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37E3575F114902FE00D3DB9A /* UserDefaults.plist */; };
@@ -88,8 +88,8 @@
 		372BC7D6114A74DA00BBDFFC /* EventHotkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventHotkey.m; sourceTree = "<group>"; };
 		372BC81C114A802200BBDFFC /* Spaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spaces.h; sourceTree = "<group>"; };
 		372BC81D114A802200BBDFFC /* Spaces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spaces.m; sourceTree = "<group>"; };
+		376B7DF6114F88FB00927A36 /* KBCaptureEvent.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = KBCaptureEvent.rb; sourceTree = "<group>"; };
 		377D058E1147B23D004DC6E6 /* RConsole.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = RConsole.rb; sourceTree = "<group>"; };
-		3793003A114E8324009DE629 /* KETextField.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = KETextField.rb; sourceTree = "<group>"; };
 		37C15C48114E2EDA0053603A /* OpenX.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = OpenX.rb; sourceTree = "<group>"; };
 		37DD659211482680003BE423 /* rConsole.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = rConsole.icns; sourceTree = "<group>"; };
 		37E3575F114902FE00D3DB9A /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				372BC81C114A802200BBDFFC /* Spaces.h */,
 				372BC81D114A802200BBDFFC /* Spaces.m */,
 				37C15C48114E2EDA0053603A /* OpenX.rb */,
-				3793003A114E8324009DE629 /* KETextField.rb */,
+				376B7DF6114F88FB00927A36 /* KBCaptureEvent.rb */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -266,7 +266,7 @@
 				37E35760114902FE00D3DB9A /* UserDefaults.plist in Resources */,
 				372BC726114A52BB00BBDFFC /* rConsole.png in Resources */,
 				37C15C49114E2EDA0053603A /* OpenX.rb in Resources */,
-				3793003B114E8324009DE629 /* KETextField.rb in Resources */,
+				376B7DF7114F88FB00927A36 /* KBCaptureEvent.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
